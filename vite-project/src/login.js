@@ -1,4 +1,5 @@
 import { supabase } from "./supabase.js"; // Asegúrate de tener este archivoconfigurado con createClient
+import { mostrarRegistro } from "./registro.js";
 
 export function mostrarLogin() {
 document.querySelector("#app").innerHTML = `
@@ -20,7 +21,12 @@ document.querySelector("#login-form").addEventListener("submit",
 handleLogin);
 document.querySelector("#btn-registro").addEventListener("click",
 mostrarRegistro);
+
+  document.getElementById('btn-registro').addEventListener('click', () => {
+    mostrarRegistro();
+  });
 }
+    
 
 async function handleLogin(event) {
 event.preventDefault();
